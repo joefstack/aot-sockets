@@ -23,7 +23,7 @@ class Payload extends React.Component {
     };
 
     this.ws.onmessage = evt => {
-      let data = evt.data;
+      let data = JSON.parse(evt.data);
       // console.log(message);
       this.setState(state => ({ payload: [data, ...state.payload] }));
       // console.log(this.state.payload);
